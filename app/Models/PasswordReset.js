@@ -15,7 +15,7 @@ class PasswordReset extends Model {
     })
   }
 
-  //  format values to db
+  // Format values to db
   static get dates() {
     return ['created_at', 'updated_at', 'expires_at']
   }

@@ -10,10 +10,11 @@ class Order extends Model {
     super.boot()
 
     /**
-     *  Hook will be called when the lifecycle afterFind occurs
-     *  2param: File hook name .name of the hook
+     *  1st param: When the hook will be called on lifecycle
+     *  2nd param: File hook name .name of the hook
      */
-    this.addHook('afterFind', 'OrderHook.updateValues')
+    this.addHook('afterFind', 'OrderHook.updateValues') // this sends 1 model
+    this.addHook('afterPaginate', 'OrderHook.updateCollectionValues') // this sends array of models
   }
   // Relation with items
   items() {

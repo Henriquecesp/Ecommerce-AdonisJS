@@ -22,6 +22,14 @@ class User extends Model {
   }
 
   /**
+   *  Ocult the data definid on return queries on db
+   */
+
+  static get hidden() {
+    return ['password']
+  }
+
+  /**
    *  Adonis Acl Traits
    */
   static get traits() {
@@ -43,6 +51,14 @@ class User extends Model {
    */
   tokens() {
     return this.hasMany('App/Models/Token')
+  }
+
+  image() {
+    return this.belongsTo('App/Models/Image')
+  }
+
+  coupons() {
+    return this.belongsToMany('App/Models/Coupon')
   }
 }
 

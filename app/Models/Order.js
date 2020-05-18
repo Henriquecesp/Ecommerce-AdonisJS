@@ -4,6 +4,17 @@
 const Model = use('Model')
 
 class Order extends Model {
+  // Call hooks
+  static boot() {
+    // Istance the parent class (Model), method boot available via inheritance
+    super.boot()
+
+    /**
+     *  Hook will be called when the lifecycle afterFind occurs
+     *  2param: File hook name .name of the hook
+     */
+    this.addHook('afterFind', 'OrderHook.updateValues')
+  }
   // Relation with items
   items() {
     return this.hasMany('App/Models/OrderItem')

@@ -12,7 +12,7 @@
 
 /** @type {import('@adonisjs/lucid/src/Factory')} */
 const Factory = use('Factory')
-const Role = use('role')
+const Role = use('Role')
 const User = use('App/Models/User')
 
 class ClientSeeder {

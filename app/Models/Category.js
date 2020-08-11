@@ -16,7 +16,7 @@ class Category extends Model {
    */
 
   products() {
-    return this.belongsToMany('App/Models/Produc')
+    return this.belongsToMany('App/Models/Product')
   }
 }
 

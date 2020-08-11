@@ -23,7 +23,7 @@ class Coupon extends Model {
    *  Relation with products
    */
   products() {
-    return this.belongsToMany('App/Models/Products')
+    return this.belongsToMany('App/Models/Product')
   }
 
   /**
